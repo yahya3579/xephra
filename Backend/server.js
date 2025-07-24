@@ -26,9 +26,7 @@ const server = http.createServer(app);
 startSubscriptionCron();
 
 const corsOptions = {
-  // origin: "https://xephra.vercel.app",
-    origin: "https://api.xephra.net",
-  // origin: "https://xephra-two.vercel.app",
+  origin: "https://xephra.net",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true, // Allows cookies to be sent
@@ -37,9 +35,7 @@ app.use(cors(corsOptions));
 
 // ✅ Handle preflight requests explicitly
 app.options("*", (req, res) => {
-  // res.header("Access-Control-Allow-Origin", "https://xephra.vercel.app");
-  res.header("Access-Control-Allow-Origin", "https://api.xephra.net");
-  // res.header("Access-Control-Allow-Origin", "https://xephra-two.vercel.app");
+  res.header("Access-Control-Allow-Origin", "https://xephra.net");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   res.header("Access-Control-Allow-Credentials", "true");

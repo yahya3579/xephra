@@ -6,12 +6,9 @@ const AdminMessageModel = require("../models/AdminMessage");
   const socketSetup = (server) => {
     const io = new Server(server, {
       cors: {
-      origin: [
-        "https://xephra.net", // Production frontend
-        // "http://localhost:3000", // Uncomment for local development
-      ],
-      methods: ["GET", "POST"],
-      credentials: true
+        origin: "https://xephra.net",
+        methods: ["GET", "POST"],
+        credentials: true
       },
       transports: ["websocket", "polling"]  
     });
