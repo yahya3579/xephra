@@ -45,14 +45,8 @@ userSchema.methods.generateVerificationToken = function() {
     // Create a random token
     this.verificationToken = crypto.randomBytes(32).toString('hex');
     
-    // Set expiration (24 hours)
-    // this.verificationTokenExpires = Date.now() + 24 * 60 * 60 * 1000;
-
-    // Set expiration (5 minutes)
-    this.verificationTokenExpires = Date.now() + 5 * 60 * 1000;
-
-    // Set expiration (1 hour)
-    // this.verificationTokenExpires = Date.now() + 60 * 60 * 1000; // 1 hour
+    // Set expiration to 24 hours
+    this.verificationTokenExpires = Date.now() + 24 * 60 * 60 * 1000;
     
     return this.verificationToken;
 };
