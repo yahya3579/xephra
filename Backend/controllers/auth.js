@@ -5,7 +5,7 @@ const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 const AdminChatGroup = require("../models/AdminChatGroup")
 const { transporter } = require("../config/emailConfig"); // Use your email config
-// const { transactionalEmailApi } = require('../config/emailConfig.js');
+const { transactionalEmailApi } = require('../config/emailConfig.js');
 
 const generateToken = (user) => {
   return jwt.sign(
