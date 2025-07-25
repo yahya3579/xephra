@@ -56,7 +56,8 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/auth/google";
+    const backendUrl = process.env.REACT_APP_BACKEND || "http://localhost:5000";
+    window.location.href = `${backendUrl}/auth/google`;
   };
 
   if (loading) {
@@ -121,7 +122,7 @@ const Login = () => {
             {showVerificationMessage && (
               <div className="mt-2 p-3 bg-yellow-100 border border-yellow-400 rounded-lg">
                 <p className="text-yellow-700 text-sm mb-2">
-                  Your email is not verified. Please check your inbox or resend the verification email.
+                  Your email is not verified. Please check your inbox or spam folder or resend the verification email.
                 </p>
                 <button
                   onClick={handleResendVerification}

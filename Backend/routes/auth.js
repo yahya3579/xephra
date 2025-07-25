@@ -24,8 +24,9 @@ router.get(
       };
   
       // Redirect to frontend with user data
+      const frontendUrl = process.env.FRONTEND_URL || "http://localhost:3000";
       res.redirect(
-        `http://localhost:3000/google-success?data=${encodeURIComponent(
+        `${frontendUrl}/google-success?data=${encodeURIComponent(
           JSON.stringify(userData)
         )}`
       );

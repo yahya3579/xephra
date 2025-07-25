@@ -200,7 +200,8 @@ const Signup = () => {
   }, [token, navigate]);
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/auth/google";
+    const backendUrl = process.env.REACT_APP_BACKEND || "http://localhost:5000";
+    window.location.href = `${backendUrl}/auth/google`;
   };
 
   if (loading) return <Loading />;

@@ -15,6 +15,7 @@ export default function Header({
   profile,
 }) {
 
+  const backendUrl = process.env.REACT_APP_BACKEND || "http://localhost:5000";
 
   return (
     <header className={`z-10 py-4`}>
@@ -63,7 +64,7 @@ export default function Header({
                  <img
                    src={
                      profile?.profileImage
-                       ? `http://localhost:5000/${profile?.profileImage}`
+                       ? `${backendUrl}/${profile?.profileImage}`
                        : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvyKxD07vzVrTXqVFK0myyV8KT99ZWBNNwGA&s"
                    }
                    alt="Profile"

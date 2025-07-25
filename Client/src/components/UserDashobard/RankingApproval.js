@@ -8,6 +8,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../utils/Loading/Loading";
 
+const backendUrl = process.env.REACT_APP_BACKEND || "http://localhost:5000";
+
 const RankingApproval = ({ dark }) => {
   const dispatch = useDispatch();
   const { loading, hostedEvents } = useSelector((state) => state.events);
@@ -250,7 +252,7 @@ const RankingApproval = ({ dark }) => {
               {/* Screenshot on Top */}
               {submission.screenshot && (
                 <img
-                  src={`http://localhost:5000/${submission.screenshot}`}
+                  src={`${backendUrl}/${submission.screenshot}`}
                   alt="Submission Screenshot"
                   className="w-full h-36 object-cover rounded-t-2xl"
                 />
