@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+console.log('BREVO_API_KEY:', process.env.BREVO_API_KEY);
 
 // For production, use real SMTP credentials
 // let transporter;
