@@ -1,8 +1,8 @@
 // server.js
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const http = require("http"); 
-const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const path = require("path");
 const authRoutes = require("./routes/auth");
@@ -18,7 +18,6 @@ const startSubscriptionCron = require('./utils/subscriptionCron');
 const passport = require('./config/passport');
 const app = express();
 const port = process.env.PORT || 8000;
-require("dotenv").config();
 
 const server = http.createServer(app);
 
